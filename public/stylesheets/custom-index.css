@@ -368,17 +368,19 @@ url.carousel-example-generic{
 
 .case-scroll-line{
 	margin-left: 50%;
-	height:250px;
+	height:220px;
 	border-left: 3px dashed grey;
 }
 
 .case-omlet-screen{
 	margin-top: 15px;
-	width:100%;
-	border: 1px solid grey;
-	content:url(../images/sabrina-demo.png);
-	border-radius:4px;
+	width:110%;
+	margin-left: -5%;
 }
+
+.case-screen-1{content:url(../images/case-screen-1.png);}
+.case-screen-2{content:url(../images/case-screen-2.png);}
+.case-screen-3{content:url(../images/case-screen-3.png);}
 
 .case-btn{
 	font-size: 15px;
