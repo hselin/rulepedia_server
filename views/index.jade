@@ -1,0 +1,332 @@
+extends layout
+
+
+block scripts
+    link(rel='stylesheet', href='/stylesheets/custom-index.css')
+    script(src="/js/index.js")
+
+block content
+    
+    section(class='page-banner block')
+        div(class='iot-banner')
+            div(class='iot-comic-picture')
+                div(class='iot-content', align='center')
+                    h2(class="iot-content-text iot-content-name") Thingpedia
+                    h4(class="iot-content-text iot-content-ad") Help the world connect the dots
+                    h4(class="iot-content-text iot-content-short") An crowdsourced open platform for creating IoT rules and recipes led by Stanford University
+                    div(class='iot-btn-tab')
+                        a(class='btn btn-primary iot-btn iot-btn-developer col-sm-4 col-sm-offset-1 col-xs-12') I'm a developer
+                        a(class='btn btn-warning iot-btn iot-btn-subscribe col-sm-4 col-xs-12') I want to support
+
+    section(class='white-block features')
+        div(class='feature-one row')
+            div(class='feature-one-img col-sm-5 col-sm-offset-1 col-xs-12')
+            div(class='feature-one-text col-sm-5')
+                h3(class='feature-title') The More You Use, The Stronger It Is
+                p(class='feature-text') We provide an crowdsourced platform. Everyone can deploy rules from the existing repositories, as well as create and share their own IoT (Internet of Things) rules. 
+                    a Learn More
+        div(class='feature-two row')
+            div(class='feature-two-text col-sm-5 col-sm-offset-1')
+                h3(class='feature-title') Similar but Better
+                p(class='feature-text') Rules are similar to IFTTT "recipes" and Zapier "zaps", but unlike these proprietary platforms, Rulepedia is opensourced and allows users to keep their own data privacy. 
+                    a Learn More
+            div(class='feature-two-img col-sm-5 col-xs-12')
+
+
+    section(class='subscribe')
+        button(href="#" class="subscribe-button btn btn-default") Subscribe to Thingpedia
+        div(class='subscribe-line')
+
+    section(class='grey-block idea')
+        div
+            h4(class='idea-title') Based on pre-built channels, these rules can be written within dozens of lines of code...
+        div(class='idea-row row')
+            div(class="idea-panel-wrap col-md-4")
+                div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                    div(class="idea-panel-body panel-body")
+                        span(class="fa-stack fa-lg hvr-rotate idea-icon icon-1")
+                          i(class="fa fa-circle-thin fa-stack-2x")
+                          i(class="fa fa-taxi fa-stack-1x")
+                        div(class="idea-text")
+                            |Call a texi
+                            br
+                            | <i>---if---</i>
+                            br
+                            |there's a storm
+
+            div(class="idea-panel-wrap col-md-4")
+                div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                    div(class="idea-panel-body panel-body")
+                        span(class="fa-stack fa-lg hvr-rotate idea-icon icon-2")
+                          i(class="fa fa-circle-thin fa-stack-2x")
+                          i(class="fa fa-lightbulb-o fa-stack-1x")
+                        div(class="idea-text")
+                            |Turn on lights
+                            br
+                            | <i>---if---</i>
+                            br
+                            |it's at dusk
+
+            div(class="idea-panel-wrap col-md-4")
+                div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                    div(class="idea-panel-body panel-body")
+                        span(class="fa-stack fa-lg hvr-rotate idea-icon icon-3")
+                          i(class="fa fa-circle-thin fa-stack-2x")
+                          i(class="fa fa-twitter fa-stack-1x")
+                        div(class="idea-text")
+                            |Send a twit
+                            br
+                            | <i>---if---</i>
+                            br
+                            |weather's good
+
+        div(class='idea-row row')
+            div(class="idea-panel-wrap col-md-4")
+                div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                    div(class="idea-panel-body panel-body")
+                        span(class="fa-stack fa-lg hvr-rotate idea-icon icon-4")
+                          i(class="fa fa-circle-thin fa-stack-2x")
+                          i(class="fa fa-credit-card fa-stack-1x")
+                        div(class="idea-text")
+                            |Send me a text
+                            br
+                            | <i>---if---</i>
+                            br
+                            |my card is charged
+
+            div(class="idea-panel-wrap col-md-4")
+                div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                    div(class="idea-panel-body panel-body")
+                        span(class="fa-stack fa-lg hvr-rotate idea-icon icon-5")
+                          i(class="fa fa-circle-thin fa-stack-2x")
+                          i(class="fa fa-line-chart fa-stack-1x")
+                        div(class="idea-text")
+                            |Send me notification
+                            br
+                            | <i>---if---</i>
+                            br
+                            |stock is up
+
+            div(class="idea-panel-wrap col-md-4")
+                div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                    div(class="idea-panel-body panel-body")
+                        span(class="fa-stack fa-lg hvr-rotate idea-icon icon-6")
+                          i(class="fa fa-circle-thin fa-stack-2x")
+                          i(class="fa fa-heartbeat fa-stack-1x")
+                        div(class="idea-text")
+                            |Share my activity
+                            br
+                            | <i>---if---</i>
+                            br
+                            |I work out
+
+        div(class='idea-row row last-row')
+            div(class="idea-panel-wrap col-md-4 col-md-offset-2")
+                div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                    div(class="idea-panel-body panel-body")
+                        span(class="fa-stack fa-lg hvr-rotate idea-icon icon-7")
+                          i(class="fa fa-circle-thin fa-stack-2x")
+                          i(class="fa fa-paw fa-stack-1x")
+                        div(class="idea-text")
+                            |Call my number
+                            br
+                            | <i>---if---</i>
+                            br
+                            |Fido is lost :(
+
+            div(class="idea-panel-wrap col-md-4")
+                div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                    div(class="idea-panel-body panel-body")
+                        span(class="fa-stack fa-lg hvr-rotate idea-icon icon-8")
+                          i(class="fa fa-circle-thin fa-stack-2x")
+                          i(class="fa fa-question fa-stack-1x")
+                        div(class="idea-text")
+                            |Create your own
+                            br
+                            | <i>---if---</i>
+
+
+
+        // Panel-based example demo: bad effect
+        //
+            div
+                h4(class='idea-title') Build them up easily using existing platform 
+                    br
+                    | <b>Omlet</b> and <b>Sabrina</b>
+                br
+                br
+
+            div(class="panel panel-default idea-case-description idea-case-panel")
+                div(class="panel-body")
+                    Basic panel
+                    div(class='row idea-panel-body-row')
+                        div.col-md-offset-1.col-md-5.col-sm-12
+                            a(class='idea-case-exp idea-case-video idea-case-video-1')
+                            p(class='idea-case-exp idea-case-text') Sabrina will send a notifacion to Omlet chat whenever the doorbell (based on IBeacon) is pressed
+                        div.idea-case-screen.col-md-5
+                            image(class='idea-case-img idea-case-img-1')
+        // Panel-based example demo: bad effect
+        br
+        br
+        br
+
+    section(class='white-block case')
+        br
+        br
+        div
+            h4.case-title Build them up easily using existing platforms
+        div.case-title-line
+        div.case-platform-omlet.case-platform.case-slideLeft
+            div.row
+                div.case-platform-omlet-text.col-md-5.col-md-offset-1
+                    h3.case-platform-text-title.case-platform-text Omlet
+                    p.case-text.case-platform-text Omlet is an Open Messaging Platform developed by Omlet Inc. that enables consumers to “share anything, with anyone, anywhere,” while owning the data they share.
+                    a(class='btn case-btn case-btn-omlet') Download Omlet
+                div.case-platform-omlet-img.col-md-5
+        div.case-platform-sabrina.case-platform.case-slideRight
+            div.row
+                div.case-platform-sabrina-img.col-md-5.col-md-offset-1.row
+                    div.case-platform-sabrina-img-2
+                    div.case-platform-sabrina-img-1
+                div.case-platform-sabrina-text.col-md-5.case-platform-text
+                    br
+                    h3.case-platform-text-title.case-platform-text Sabrina
+                    p.case-text.case-platform-text Omlet is an Open Messaging Platform that enables consumers to “share anything, with anyone, anywhere,” while owning the data they share.
+                    a(class='btn case-btn case-btn-sabrina') Download Sabrina
+        br
+        br
+
+    section(class='grey-block case')
+        div
+            h4.case-title Check out some of our examples
+        div.case-title-line
+        div.row.case-row
+            div.col-md-4
+                div.case-row-item
+                    a.case-item-video
+                    div.case-item-text
+                        h4 abcabc
+                        p AEBUOBONFOAW FJIOW FIQWM FNOPJEOIPFW  FWIOFNIOW W
+                    div.case-expandUp
+                        div.case-scroll-line
+                        div.case-omlet-screen
+            div.col-md-4
+                div.case-row-item
+                    a.case-item-video
+                    div.case-item-text
+                        h4 abcabc
+                        p AEBUOBONFOAW FJIOW FIQWM FNOPJEOIPFW  FWIOFNIOW W
+                    div.case-expandUp
+                        div.case-scroll-line
+                        div.case-omlet-screen
+            div.col-md-4
+                div.case-row-item
+                    a.case-item-video
+                    div.case-item-text
+                        h4 abcabc
+                        p AEBUOBONFOAW FJIOW FIQWM FNOPJEOIPFW  FWIOFNIOW W
+                    div.case-expandUp
+                        div.case-scroll-line
+                        div.case-omlet-screen
+        br
+        br
+        br
+
+    section(class='white-block team')
+        br
+        div
+            h3.case-title Our Team
+        div.team-title-line
+        div.team-profile
+            div.team-profile-row-big
+                div.row
+                    div.col-md-9.col-md-offset-2
+                        div.team-profile-wrap
+                            div.team-profile-elem.panel.team-profile-big.team-profile-img Monica Lam
+                            div.team-profile-elem.team-profile-text
+                                h4.team-profile-name Monica Lam
+                                p Monica Lam is a Professor in the Computer Science Department at Stanford University since 1988. She received a B.Sc. from University of British Columbia in 1980 and a Ph.D. in Computer Science from Carnegie Mellon University in 1987. She is the Faculty Director of the Stanford MobiSocial Computing Laboratory and a co-PI in the POMI (Programmable Open Mobile Internet) 2020 project, which is an NSF Expedition started in 2008.
+                            div
+            div.team-profile-row-mid
+                div.row
+                    div.col-md-2
+                        div.panel.team-profile-mid.team-profile-mid-1
+                        div
+                            h6.team-profile-mid-text.team-profile-name Giovanni Campagna
+                            p.team-profile-mid-text.team-profile-mid-des CS MS, platform backend development
+                    div.col-md-2
+                        div.panel.team-profile-mid.team-profile-mid-2
+                        div
+                            h6.team-profile-mid-text.team-profile-name Albert Chen
+                            p.team-profile-mid-text.team-profile-mid-des CS MS, web development
+                    div.col-md-2
+                        div.panel.team-profile-mid.team-profile-mid-3
+                        div
+                            h6.team-profile-mid-text.team-profile-name Michael Fischer
+                            p.team-profile-mid-text.team-profile-mid-des CS PhD, UI UX design
+                    div.col-md-2
+                        div.panel.team-profile-mid.team-profile-mid-4
+                        div
+                            h6.team-profile-mid-text.team-profile-name Zhiyang He
+                            p.team-profile-mid-text.team-profile-mid-des EECS BS, web development
+                    div.col-md-2
+                        div.panel.team-profile-mid.team-profile-mid-5
+                        div
+                            h6.team-profile-mid-text.team-profile-name Jiaqi Xue
+                            p.team-profile-mid-text.team-profile-mid-des EE PhD, web front-end
+                    div.col-md-2
+                        div.panel.team-profile-mid.team-profile-mid-6
+                        div
+                            h6.team-profile-mid-text.team-profile-name Jiwon Seo
+                            p.team-profile-mid-text.team-profile-mid-des CS PhD, platform development
+        br
+        br
+        br
+
+
+
+    //BELOW is the code for carousel
+    //
+      div(id='carousel-example-generic', class='main-carousel carousel slide', data-ride='carousel')
+        ol(class='carousel-indicators')
+            li(data-target='#carousel-example-generic', data-slide-to='0', class='active')
+            li(data-target='#carousel-example-generic', data-slide-to='1')
+            li(data-target='#carousel-example-generic', data-slide-to='2')
+       
+        div(class='carousel-inner', role='listbox')
+            div(class='item')
+                img(class='img-responsive center-block', src='/images/world.jpg')
+                div(class='carousel-caption', style='color: #FFFFCC')
+                    h1
+                        b Create and share magic spells for your magic assistant to simplify everyday tasks
+            div(class='item active')
+                img(class='img-responsive center-block', src='/images/world3.jpg')
+                div(class='carousel-caption', style='color: #FFFFFF')
+                    h1
+                        b Welcome to Sabrina's Magic Shop!
+            div(class='item')
+                img(class='img-responsive center-block', src='/images/world2.jpg')
+                div(class='carousel-caption', style='color: #FF0066')
+                    h1
+                        b Monitor events and trigger actions from your phone - magically
+
+
+        a(class='left carousel-control', href='#carousel-example-generic', role='button', data-slide='prev')
+            span(class='glyphicon glyphicon-chevron-left', aria-hidden='true')
+            span(class='sr-only')
+                | Previous
+
+        a(class='right carousel-control', href='#carousel-example-generic', role='button', data-slide='next')
+            span(class='glyphicon glyphicon-chevron-right', aria-hidden='true')
+            span(class='sr-only')
+                | Next
+
+    //ABOVE is the code for carousel
+
+  br
+  br
+
+  div.center
+    a(class='btn btn-primary main-nav-button', href='/browse') Browse spells
+    a(class='btn btn-success main-nav-button', href='/create') Create a new spell
+

@@ -1,0 +1,520 @@
+[{"id":"timer",
+  "objectId":"https://rulepedia.stanford.edu/oid/predefined/channel/timer",
+  "description":"Timer",
+  "methods":[],
+  "event-sources": [],
+  "services": [],
+  "events": [{
+      "id":"elapsed",
+      "description":"Periodically",
+      "text": "Every",
+      "params": [{
+          "id": "interval",
+          "type": "time",
+          "description": "Every",
+          "text":""
+      }],
+      "event-sources": [{
+      "id": "poll",
+      "type": "polling",
+      "polling-interval": "{{interval}}"
+      }],
+      "generates":[{
+          "id": "current-time",
+          "type": "text",
+          "description": "the current time",
+          "text": "the current time"
+      }],
+      "script": "function(params, events, context) { log('Periodic timer activated'); context['current-time'] = (new Date()).toLocaleString(); return events.poll; }"
+  }]
+ },{
+  "id":"google-fit",
+  "objectId":"https://rulepedia.stanford.edu/oid/predefined/channel/google-fit",
+  "description":"Fitness",
+  "events":[{
+        "id": "end-activity",
+        "description": "When I finish an activity",
+        "text": "I finish a fitness activity",
+        "generates": [{
+            "id": "activity-description",
+            "type": "text",
+            "description": "the description of the activity",
+            "text": "the description of the activity"
+        },{"id": "activity-duration",
+           "type": "time",
+           "description": "the duration of the activity",
+           "text": "the duration of the activity"
+        },{"id": "activity-end-time",
+           "type": "text",
+           "description": "the end time of the activity",
+           "text": "the end time of the activity"}],
+        "params": []
+      }],
+  "methods":[{
+      "id": "fetch-history-data",
+      "description": "Compute my statistics",
+      "text": "Compute the aggregate statistics of",
+      "generates": [{
+         "id": "fitness-statistics-{{data-type}}",
+         "type": "number",
+         "description": "the computed {{data-type}}",
+         "text": "the computed {{data-type}}"
+      }],
+      "params": [{
+         "id": "data-type",
+         "type": "select",
+         "canTrigger": false,
+         "options": {"calories-expended": "Calories consumed",
+                     "distance-delta": "Distance travelled",
+                     "avg-heart-rate": "Average heart rate",
+                     "max-heart-rate": "Maximum heart rate",
+                     "avg-power": "Average power output",
+                     "max-power": "Maximum power output",
+                     "avg-speed": "Average speed",
+                     "max-speed": "Maximum speed",
+                     "step-count": "Number of steps"},
+         "description": "aggregating this data",
+         "text":""
+      },{
+        "id": "aggregate-period",
+        "type": "time",
+        "description": "over this period",
+        "text": "over the last"
+      },{
+        "id": "activity-filter",
+        "type": "text",
+        "optional": true,
+        "description": "for a specific activity",
+        "text": "when I was doing"
+      }]
+  },{
+      "id": "fetch-current-value",
+      "description": "Compute my current values",
+      "text": "Read my biometric value of",
+      "generates": [{
+         "id": "fitness-current-value-{{data-type}}",
+         "type": "number",
+         "description": "the current biometric value",
+         "text": "the current value"
+      }],
+      "params": [{
+         "id": "data-type",
+         "type": "select",
+         "canTrigger": false,
+         "options": {"weight": "Weight",
+                     "height": "Height",
+                     "basal-metabolic-rate": "Basal metabolic rate",
+                     "body-fat-percentage": "Body fat percentage"},
+         "description": "measuring this data",
+         "text":""
+      }]
+  }]
+ },{"id":"notifications",
+    "objectId":"https://rulepedia.stanford.edu/oid/predefined/channel/notifications",
+    "description":"Notifications",
+    "events":[],
+    "methods": [{
+        "id":"post-notification",
+        "description": "Show a notification",
+        "text": "Show a notification",
+        "generates": [],
+        "params": [{
+            "id": "title",
+            "type": "text",
+            "description": "with the title",
+            "text": "with title"
+        },{
+            "id": "text",
+            "type": "textarea",
+            "description": "with the text",
+            "text": "and saying"
+        }]
+    }]
+ },{"id":"omdb",
+  "objectId":"https://rulepedia.stanford.edu/oid/placeholder/channel/omdb",
+  "urlPrefix": "http://www.omdbapi.com/?r=json&v=1&i=",
+  "urlRegex": "http://www\\.omdbapi\\.com/\\?r=json&v=1&i=[a-z0-9]+$",
+  "auth": "none",
+  "description":"Movies",
+  "methods": [],
+  "event-sources": [{
+      "id": "poll",
+      "type": "polling-http",
+      "polling-interval": 86400
+  }],
+  "events": [{
+      "id": "movie-released",
+      "description": "When a movie is released",
+      "text": "A specific movie is released",
+      "params": [],
+      "generates": [{
+          "id": "title",
+          "type": "text",
+          "text": "the movie title",
+          "description": "the movie title"
+      }],
+      "event-sources": ["global-poll"],
+      "script": "function(params, events, context) { var object = JSON.parse(events.poll); context.title = object.Title; return (new Date(object.Released)).getTime() >= (new Date).getTime(); }"
+  }]
+ },{
+     "id": "email",
+     "objectId":"https://rulepedia.stanford.edu/oid/predefined/channel/email",
+     "description": "Email",
+     "event-sources": [],
+     "methods": [{
+   	   "id": "send-message",
+   	   "description": "Send an email",
+   	   "text": "Send an email",
+   	   "script": "function(params) { return ({ type: 'email', to: params.destination.substr('mailto:'.length), subject: 'Message from Sabrina', body: params.content }); }",
+   	   "generates": [],
+   	   "params": [
+   	       { "id": "content",
+   		 "type": "textarea",
+   		 "description": "containing the text",
+   		 "text": "containing"
+   	       },
+   	       { "id": "destination",
+   		 "type": "contact",
+   		 "subType": "email",
+   		 "description": "to",
+   		 "text": "to"
+   	       }
+   	   ]
+       }],
+     "events": []
+ },{
+     "id": "corktastic",
+     "objectId":"https://rulepedia.stanford.edu/oid/predefined/channel/corktastic",
+     "description": "Corktastic",
+     "event-sources": [],
+     "methods": [{
+   	   "id": "send-corktastic",
+   	   "description": "Post a message",
+   	   "text": "Post a message to Corktastic",
+   	   "script": "function(params) { return ({ type: 'email', to: 'corktastic1000@gmail.com', subject: params.content, body: '' }); }",
+   	   "generates": [],
+   	   "params": [
+   	       { "id": "content",
+   		 "type": "textarea",
+   		 "description": "containing the text",
+   		 "text": "containing"
+   	       },{
+   	         "id": "device",
+   	         "type": "device",
+   	         "subType": "ibeacon/corktastic",
+   	         "description": "",
+   	         "text": ""
+   	       }
+   	   ]
+       },{
+   	   "id": "send-picture",
+   	   "description": "Post a picture",
+   	   "text": "Post a picture to Corktastic",
+   	   "script": "function(params) { return ({ type: 'email', to: 'corktastic1000@gmail.com', subject: params.content, body: '' }); }",
+   	   "generates": [],
+   	   "params": [
+   	       { "id": "content",
+   		 "type": "picture",
+   		 "description": "from the URL",
+   		 "text": "from"
+   	       },{
+   	         "id": "device",
+   	         "type": "device",
+   	         "subType": "ibeacon/corktastic",
+   	         "description": "",
+   	         "text": ""
+   	       }
+   	   ]
+       }],
+     "events": []
+ },{
+     "id": "omlet",
+     "objectId":"https://rulepedia.stanford.edu/oid/predefined/channel/omlet",
+     "description": "Omlet",
+     "methods": [{
+   	   "id": "send-message",
+   	   "description": "Send a message",
+   	   "text": "Send a text message",
+   	   "generates": [
+   	       { "id": "message-content",
+   	         "type": "text",
+   	         "description": "the message text",
+   	         "text": "the message" }],
+   	   "params": [
+   	       { "id": "content",
+   		 "type": "textarea",
+   		 "description": "containing the text",
+   		 "text": "containing"
+   	       },
+   	       { "id": "destination",
+   		 "type": "contact",
+   		 "subType": "content",
+   		 "description": "to",
+   		 "text": "to"
+   	       }
+   	   ]
+       },{
+   	   "id": "share-picture",
+   	   "description": "Share a picture",
+   	   "text": "Share a picture message",
+   	   "generates": [
+   	       { "id": "message-content",
+   	         "type": "picture",
+   	         "description": "the picture",
+   	         "text": "the picture from the message" }],
+   	   "params": [
+   	       { "id": "content",
+   		 "type": "picture",
+   		 "description": "from the URL",
+   		 "text": "from"
+   	       },
+   	       { "id": "destination",
+   		 "type": "contact",
+   		 "subType": "content",
+   		 "description": "to",
+   		 "text": "to"
+   	       }
+   	   ]
+       }],
+     "events": [{
+         "id": "message-received",
+         "description": "When I receive a chat message",
+         "text": "I receive an Omlet message",
+         "params": [{
+             "id": "content-contains",
+             "type": "textarea",
+             "optional": true,
+             "description": "containing this text",
+             "text":"containing"
+         },{
+             "id": "sender-matches",
+             "type": "contact",
+             "subType": "content",
+             "optional": true,
+             "description": "from",
+             "text": "from"
+         }],
+         "generates": [{
+             "id": "content",
+             "type": "text",
+             "text": "the received message",
+             "description": "the received message"
+         },{
+             "id": "sender",
+             "type": "contact",
+             "text": "the sender of the message",
+             "description": "the sender of the message"
+         }]
+         },{
+         "id": "picture-received",
+         "description": "When I receive a picture",
+         "text": "I receive a picture on Omlet",
+         "params": [{
+             "id": "sender-matches",
+             "type": "contact",
+             "subType": "content",
+             "optional": true,
+             "description": "from",
+             "text": "from"
+         }],
+         "generates": [{
+             "id": "content",
+             "type": "picture",
+             "text": "the received picture",
+             "description": "the received picture"
+         },{
+             "id": "sender",
+             "type": "contact",
+             "text": "the sender of the message",
+             "description": "the sender of the message"
+         }]
+     }]
+ },{
+     "id": "sms",
+     "objectId":"https://rulepedia.stanford.edu/oid/predefined/channel/sms",
+     "description": "Text messages",
+     "methods": [{
+   	   "id": "send-message",
+   	   "description": "Send a message",
+   	   "text": "Send a text message",
+   	   "generates": [
+   	       { "id": "message-content",
+   	         "type": "text",
+   	         "description": "the message text",
+   	         "text": "the message" }],
+   	   "params": [
+   	       { "id": "content",
+   		 "type": "textarea",
+   		 "description": "containing the text",
+   		 "text": "containing"
+   	       },
+   	       { "id": "destination",
+   		 "type": "contact",
+   		 "subType": "tel",
+   		 "description": "to",
+   		 "text": "to"
+   	       }
+   	   ]
+       }],
+     "events": [{
+         "id": "message-received",
+         "description": "When I receive a text",
+         "text": "I receive a text",
+         "params": [{
+             "id": "content-contains",
+             "type": "textarea",
+             "optional": true,
+             "description": "containing this text",
+             "text":"containing"
+         },{
+             "id": "sender-matches",
+             "type": "contact",
+             "optional": true,
+             "description": "from",
+             "text": "from"
+         }],
+         "generates": [{
+             "id": "content",
+             "type": "text",
+             "text": "the received message",
+             "description": "the received message"
+         },{
+             "id": "sender",
+             "type": "contact",
+             "text": "the sender of the message",
+             "description": "the sender of the message"
+         }]
+     }]
+ },{
+       "id":"games",
+       "objectId":"https://rulepedia.stanford.edu/oid/predefined/omlet-games",
+       "description":"Omlet Games",
+       "event-sources": [{
+              "id":"score_intent",
+              "type":"broadcast-receiver",
+              "intent-action":"edu.stanford.braincat.rulepedia.GAME_HIGH_SCORE"
+              }],
+       "services":[],
+       "events":[{
+              "id":"high-score",
+              "description":"When I obtain a new high score",
+              "text":"I obtain a new high score",
+              "script":"function trigger(params, events, context) {\n if (!events.score_intent) return false;\n if (params.package_name !== undefined && params.package_name !==\n events.score_intent.extras['edu.stanford.braincat.rulepedia.EXTRA_PACKAGE_NAME']) {\n log('wrong package name');\n return false;\n }\n\n context.package_name = events.score_intent.extras['edu.stanford.braincat.rulepedia.EXTRA_PACKAGE_NAME'];\n context.score = events.score_intent.extras['edu.stanford.braincat.rulepedia.EXTRA_SCORE'];\n return true;\n}",
+              "event-sources":[],
+              "generates":[{"id":"package_name","type":"text","text":"the game","description":"the game"},
+                           {"id":"score","type":"text","text":"my score","description":"the score"}],
+              "params":[{"id":"package_name","type":"text","text":"in","description":"in this game","optional":true}]
+              }],
+       "methods":[]
+ },{
+       "id": "weather",
+       "objectId":"https://rulepedia.stanford.edu/oid/predefined/channel/weather",
+       "description": "Weather",
+       "methods": [],
+       "events": [{
+           "id": "given-forecast",
+           "description": "When the forecast says",
+           "text": "the weather forecast says",
+           "params": [{
+               "id": "forecast",
+               "type": "select",
+               "options": { "rain": "Rain", "sun": "Sunny" },
+               "defaultOption": "rain"
+           }],
+           "generates": []
+       },{
+           "id": "given-temperature",
+           "description": "When the temperature is",
+           "text": "the weather forecast says the temperature is",
+           "params": [{
+               "id": "comparator",
+               "type": "select",
+               "options": { "gt": "above", "lt": "below"},
+               "defaultOption":"gt"
+           },{
+               "id": "value",
+               "type": "temperature"
+           }],
+           "generates": []
+       }]
+   },{
+        "id": "deal-test",
+        "objectId": "https://deal-me.herokuapp.com/nba",
+        "description": "Deal Test",
+        "services": [],
+        "event-sources": [
+          {
+            "id": "deal-poll",
+            "type": "polling-http",
+            "polling-interval": 30000,
+            "url": "{{url}}"
+          }
+        ],
+        "events": [
+          {
+            "id": "game",
+            "description": "The NBA Champion will be the",
+            "text": "",
+            "script": "function trigger(params, events, context) {var obj = JSON.parse(events.deal-poll); context['player_won'] = obj.winning_team == \"warriors\"; context['winning_team'] = obj.winning_team; context['player_team'] = \"warriors\"; return obj.game_over}",
+            "generates": [
+              {
+                "id": "player_won",
+                "type": "number",
+                "text": "win",
+                "description": "win"
+              },
+              {
+                "id": "winning_team",
+                "type": "text",
+                "text": "win_team",
+                "description": "win_team"
+              }
+            ],
+            "params": [
+              {
+                "id": "teams",
+                "type": "select",
+                "description": "",
+                "text": "The NBA Champions will be the ",
+                "options": { "Warriors": "Warriors", "Cavs": "Cavs"},
+                "defaultOption": "Warriors"
+              }
+            ]
+          }
+        ],
+        "methods": [
+
+        ]
+      }, {
+      "id":"ping",
+      "objectId":"http://deal-me.herokuapp.com/ping",
+      "description":"Deal Ping",
+      "services": ["omlet"],
+      "event-sources":[],
+      "events":[],
+      "methods":[
+          {
+              "id":"ping-action",
+              "description":"Ping this URL",
+              "text":"Will ping this URL",
+              "generates": [],
+              "params":[
+                  {
+                      "id":"url",
+                      "type":"text",
+                      "text":"url",
+                      "description":"URL",
+                      "optional":false
+                  },
+                  {
+                      "id":"data",
+                      "type":"text",
+                      "text":"data",
+                      "description":"Data",
+                      "optional":false
+                  }
+              ],
+              "script":"function action(params) {\n return {type: 'http', url: params.url, method: 'post', data: self.omlet_id + ' :: ' + params.data};\n}"
+          }
+      ]
+      }]

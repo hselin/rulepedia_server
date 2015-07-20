@@ -1,0 +1,14 @@
+extends layout
+
+block scripts
+  script(src='/js/qrcode.js')
+  script(src='/js/rule.js')
+
+block content
+  h1.center Magic Spell Installation
+  br
+  p For Sabrina to learn this spell, scan the QR code or copy-paste the URL to your Android device and open it.
+  div(id='qr-code')
+
+  script(type='text/javascript').
+    install();

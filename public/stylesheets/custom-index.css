@@ -1,0 +1,449 @@
+.carousel-example-generic{
+	margin: auto;
+	width:1900px;
+}
+
+/* Max height of navbar will stick to 64px, inherited from body */
+.navbar{
+	margin-bottom: 0px;
+	max-height: 64px;
+	line-height: 0px;
+}
+
+.center-block{
+	margin: auto;
+	width:1900px;
+}
+
+.iot-banner{
+	width:100%;
+	margin-top: 48px;
+	height: 550px;			/*USE Javascript to modify this if screen changes size*/
+}
+
+.iot-comic-picture{
+	padding-top: 7%;		/*Problem not solved, once padding added, alignment changes */
+							/*Try deleting the padding and see what happens */
+	width: 100%;
+	height: 100%;
+	background-image:url(../images/world.jpg);
+	background-size: cover;
+}
+
+.iot-content{
+	box-shadow: 5px 5px 5px #AAAAAA;
+	background-color: rgba(244, 244, 244, 0.917);
+	height: 65%;
+	margin-right: 25%;
+	margin-left:25%;
+	padding: 6px 3.7% 25px 3.7%;
+}
+
+.iot-content-text{
+	color: #666666;
+}
+
+.iot-content-name{
+	font-weight: 900;
+	margin-bottom: 15px;
+}
+
+.iot-content-ad{
+	font-weight:900;
+	margin-bottom: 20px;
+}
+
+.iot-content-short{
+	margin-bottom: 2.4%;
+}
+
+.iot-btn,.case-btn{
+	font-size: 15px;
+	box-shadow: 2px 2px 2px #777777;
+}
+
+.iot-btn-developer{
+	background-color: #34B7C3;
+	margin-left: 12.5%;
+	margin-right: 6.25%;
+}
+
+.iot-btn-developer:hover{
+	background-color: #2C9991;
+}
+
+.iot-btn-subscribe{
+	background-color: #FFA142;
+}
+
+.iot-btn-subscribe:hover{
+	background-color: #D18B43;
+}
+
+.feature-one{
+	padding-top: 70px;
+	padding-bottom: 40px;
+}
+
+.feature-two{
+	margin-bottom:35px;
+}
+
+.feature-one-img{
+	content:url(../images/opensource.png);
+}
+
+.feature-two-img{
+	content:url(../images/iot.png);
+}
+
+.feature-title{
+	color: rgb(102, 102, 102);
+	font-weight: bold;
+	margin-top: 9%;
+}
+
+.feature-text{
+	margin-top: 4%;
+	font-size: 20px;
+}
+
+.subscribe-button{
+	margin: auto;
+	font-size: 20px;
+	color:#F4F4F4;
+	font-weight: bold;
+	height: 70px;
+	margin-left: 27.5%;
+	width: 45%;
+	border-radius:26px;
+	margin-bottom: -30px;
+	background-color: #566D7E;		/* Marble color */
+	box-shadow: 3px 3px 3px #888888;
+	border-width: 2px;
+	border-color: rgb(200, 200, 200);
+}
+
+.grey-block.idea{
+	padding-top: 40px;
+}
+
+.subscribe-line{
+	border-top: 2px solid grey;
+}
+
+.white-block{
+
+}
+
+.grey-block{
+	background-color: rgb(222, 222, 222);
+}
+
+.idea-title{
+	font-weight: bold;
+	padding-top: 50px;
+	padding-bottom: 15px;
+	color:rgb(80, 80, 80);
+	width:50%;
+	margin:auto;
+	text-align: center;
+}
+
+.idea-row{
+	margin:auto;
+	width:70%;
+	text-align: center;
+}
+
+.idea-panel-wrap{
+	padding-left: 30px;
+	padding-top: 40px;
+	padding-right: 30px;
+}
+
+.idea-panel-wrap .idea-panel{
+	border-width: 5px;
+	border-radius: 3px;
+	width:100%;
+	/*box-shadow: 5px 5px 5px #AAAAAA;*/	/* Write hoover effect with this line */
+}
+
+.idea-panel-body{
+	background-color: rgb(235, 235, 235);
+	border-radius:3px;
+	-moz-box-shadow:    inset 0 0 10px rgb(250 250 250);
+   	-webkit-box-shadow: inset 0 0 10px rgb(250 250 250);
+	box-shadow: inset 0px 0px 10px rgb(250 250 250);
+	border: 1px solid rgb(170, 170, 170);
+	height: 310px;
+	font-weight: bold;
+}
+
+.idea-icon{
+	margin-top: 16%;
+	font-size: 2.7em;
+}
+
+.idea-icon.icon-1{color: #D56100;}
+.idea-icon.icon-2{color: #008080;}
+.idea-icon.icon-3{color: #80A035;}
+.idea-icon.icon-4{color: #961767;}
+.idea-icon.icon-5{color: #1F3D80;}
+.idea-icon.icon-6{color: #C01E1E;}
+.idea-icon.icon-7{color: #189918;}
+.idea-icon.icon-8{color: #D58100;}
+
+.idea-text{
+	color: rgb(80, 80, 80);
+	font-size: 17px;
+	padding-top: 20%;
+	margin: auto;
+	width: 75%;
+}
+
+.idea-case-panel{
+	text-align: center;
+	background-color: rgb(235, 235, 235);
+	border-radius: 10px;
+}
+
+.idea-case-description{
+	width:50%;
+	margin:auto;
+}
+
+/*
+.idea-panel-body-row{
+	margin-top: 20px;
+}
+
+.idea-case-exp{
+	width:100%;
+	margin:auto;
+}
+
+.idea-case-text{
+	text-align: center;
+	padding-top: 10%;
+}
+
+.idea-case-video{
+	border-radius: 5px;
+}
+
+.idea-case-video-1{
+	content:url(../images/video.png);
+}
+
+.idea-case-img{
+	margin-left: 0%;
+	width:90%;
+	border-radius: 5px;
+}
+
+.idea-case-img-1{
+	content:url(../images/sabrina-demo.png);
+}
+
+.idea-case-text{
+	text-align:center;
+}*/
+
+.case-title{
+	font-weight: bold;
+	padding-top: 50px;
+	padding-bottom: 15px;
+	color:rgb(102, 102, 102);
+	width:50%;
+	margin:auto;
+	text-align: center;
+}
+
+.case-platform{
+	color: rgb(102, 102, 102);
+	margin:auto;
+	width:95%;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.case-platform-text{
+	color:rgb(102, 102, 102);
+}
+
+.case-platform-text-title{
+	font-weight: bold;
+}
+
+.case-text{
+	font-size: 20px;
+}
+
+.case-platform-omlet-text{
+	text-align: right;
+}
+
+.case-platform-omlet-img{
+	content:url(../images/omlet-platform.jpg);
+}
+
+.case-slideLeft,.case-slideRight{
+	visibility: hidden;
+}
+
+.case-platform-sabrina-img-1{
+	display: inline-block;
+	width:56.5%;
+	content:url(../images/sabrina-img-1.jpg);
+}
+
+.case-platform-sabrina-img-2{
+	display: inline-block;
+	width: 43.5%;
+	border-radius: 8px;
+	border-bottom-right-radius: 8px;
+	content:url(../images/sabrina-intro.png);
+}
+
+.case-row{
+	width:70%;
+	margin-top: 45px;
+	margin-left: 15%;
+}
+
+.case-row-item{
+	width:95%;
+	margin: auto;
+}
+
+.case-item-video{
+	content:url(../images/video.png);
+	border-radius: 4px;
+	border: 1px solid grey;
+	width:100%;
+}
+
+.case-item-text{
+	text-align: center;
+}
+
+.case-expandUp{
+	visibility: hidden;
+}
+
+.case-scroll-line{
+	margin-left: 50%;
+	height:250px;
+	border-left: 3px dashed grey;
+}
+
+.case-omlet-screen{
+	margin-top: 15px;
+	width:100%;
+	border: 1px solid grey;
+	content:url(../images/sabrina-demo.png);
+	border-radius:4px;
+}
+
+.case-btn{
+	font-size: 15px;
+	padding: auto;
+	color:#FFFFFF;
+	box-shadow: 2px 2px 2px #777777;
+	border-radius: 18px;
+	height:45px;
+}
+
+.case-btn-omlet{
+	background-color: #46BACA;
+}
+
+.case-btn-omlet:hover{
+	background-color: #32838E;
+}
+
+.case-btn-sabrina{
+	background-color: #0A1A1C;
+}
+
+.case-btn-sabrina:hover{
+	background-color: #303030;
+}
+
+.case-title-line,.team-title-line{
+	border-top: 2px solid rgb(200, 200, 200);
+	margin:auto;
+	width:30%;
+}
+
+.team-title{
+	font-weight: bold;
+	padding-top: 30px;
+	color:rgb(102, 102, 102);
+	width:50%;
+	margin:auto;
+	text-align: center;
+}
+
+.team-profile{
+	margin-top:30px;
+	margin-left: 12.5%;
+	width:75%;
+}
+
+.team-profile-row-mid{
+	padding-top:20px;
+	margin:auto;
+}
+
+.team-profile-mid{
+	margin: auto;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+
+.team-profile-big{
+	content:url(../images/monica-lam.jpg);
+	margin: auto;
+	width:180px;
+	height:180px;
+	border-radius: 50%;
+}
+
+.team-profile-mid-1{content:url(../images/giovanni.jpeg);}
+
+.team-profile-mid-2{content:url(../images/albert-chen.jpeg)}
+
+.team-profile-mid-3{content:url(../images/michael-fischer.png);}
+
+.team-profile-mid-4{content:url(../images/zhiyang-he.png);}
+
+.team-profile-mid-5{content:url(../images/jiaqi-xue.png);}
+
+.team-profile-mid-6{content:url(../images/jiwon-seo.jpg);}
+
+.team-profile-elem{
+	display: inline-block;
+}
+
+.team-profile-name{
+	font-weight: bold;
+}
+
+.team-profile-mid-text{
+	text-align: center;
+}
+
+.team-profile-text{
+	padding-top: 0px;
+	padding-left: 40px;
+	vertical-align: top;
+	height:100%;
+	width:450px;
+}
+
+.team-profile-mid-des{
+	font-size: 12px;
+}

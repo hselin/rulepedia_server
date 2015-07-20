@@ -1,0 +1,105 @@
+extends layout
+
+block scripts
+  script(src='/js/qrcode.js')
+  script(src='/js/create.js')
+
+block content
+  h1.center Create a magic spell
+
+  p Your magic assistant Sabrina can learn simple actions that she will execute when specific events occur.
+    | This model is called WTDT - <i>When this, do that</i>.
+    // lol
+  p To teach her, click on
+    i  Add new condition
+    |  to choose when your spell will be activated. You can use multiple conditions if you need it.
+    | Then, click on
+    i  Add new action
+    |  to choose what Sabrina will do when the condition happens.
+    | When you're done, click on
+    i  Learn Spell
+    |  to show the QR code. Scan this code with your phone and Sabrina will start using your spell!.
+  p You can also choose a name that will be shown in the app for you to rememeber, and for your friends
+    | to find in our magic shop!
+
+  form.form-horizontal.container-fluid.well
+    div.form-group
+      div.col-md-3
+        label(for='rule-name') Name
+
+      div.col-md-9
+        input.form-control(type='text' id='rule-name')
+
+    div.form-group
+      div.col-md-3
+        label When?
+
+      div.col-md-9
+        ul#triggers-container.container-fluid
+        button.btn.btn-default.placeholder#add-new-trigger(type='button', data-toggle='modal', data-target='#trigger-channel-select') Add new condition
+
+    div.form-group
+      div.col-md-3
+        label What?
+
+      div.col-md-9
+        ul#actions-container.container-fluid
+        button.btn.btn-default.placeholder#add-new-action(type='button', data-toggle='modal', data-target='#action-channel-select') Add new action
+
+    div.form-group.center
+      button.btn.btn-primary.btn-lg#create-rule(type='button') Create
+
+  div.modal.fade(aria-hidden='true', role='dialog', aria-labelled-by='trigger-channel-select-title')#trigger-channel-select
+    div.modal-dialog
+      div.modal-content
+        div.modal-header
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') ×
+          h4.modal-title#trigger-channel-select-title Select a magic wand
+
+        div.modal-body
+          div.container-fluid#trigger-channel-select-container
+
+  div#trigger-placeholder
+
+  div.modal.fade(aria-hidden='true', role='dialog', aria-labelled-by='action-channel-select-title')#action-channel-select
+    div.modal-dialog
+      div.modal-content
+        div.modal-header
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') ×
+          h4.modal-title#action-channel-select-title Select a magic wand
+
+        div.modal-body
+          div.container-fluid#action-channel-select-container
+
+  div#action-placeholder
+  
+  div.modal.fade(aria-hidden='true', role='dialog', aria-labelled-by='install-rule-dialog-title')#install-rule-dialog
+    div.modal-dialog
+      div.modal-content
+        div.modal-header
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') ×
+          h4.modal-title#install-rule-dialog-title Learn spell
+
+        div.modal-body
+          p To have Sabrina learn this spell, scan the QR code or copy-paste the URL to your mobile device and open it.
+
+          div#qr-code
+
+          p.well
+            a#install-rule-url
+
+  div.modal.fade(aria-hidden='true', role='dialog', aria-labelled-by='generic-error-title')#generic-error
+    div.modal-dialog
+      div.modal-content
+        div.modal-header
+          h4.modal-title#generic-error-title Error
+
+        div.modal-body
+          p#generic-error-text
+
+        div.modal-footer
+          button.btn.btn-primary(type='button', data-dismiss='modal') Ok
+  

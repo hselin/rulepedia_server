@@ -1,0 +1,57 @@
+doctype html
+html
+  head
+    title= title
+    script(src="http://code.jquery.com/jquery-1.10.1.min.js")
+
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+    //link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+    // Figure out what this does
+    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
+    link(href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/paper/bootstrap.min.css", rel="stylesheet")
+    link(rel='stylesheet', href='/stylesheets/hover-min.css', media='all')
+    link(rel='stylesheet', href='/stylesheets/animation.css', media='all')
+
+    script(src='/js/zlib/zlib.js')
+    script(src='/js/zlib/zlib-deflate.js')
+    script(src='/js/zlib/zlib-inflate.js')
+    script(src='/js/zlib/zlib-adler32.js')
+    script(src='/js/zlib/zlib-crc32.js')
+    script(src='/js/base64.js')
+    script(src='/js/shared.js')
+
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    //CSS file for layout elements
+    link(rel='stylesheet', href='/stylesheets/custom-layout.css')
+
+    block scripts
+
+  body
+    header(class="navbar navbar-fixed-top navbar-default block", role="banner")
+      div(class="navbar-header")
+        button(class="navbar-toggle collapsed", data-toggle="collapse", data-target=".bs-navbar-collapse")
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a(class="navbar-brand navbar-icon scroller", href="/") Thingpedia
+
+
+      //TODO: Set active attribute
+      nav(class="navbar-collapse bs-navbar-collapse collapse", role="navigation")
+        ul.nav.navbar-nav
+          li
+            a.navbar-icon-divider
+          li
+            img(class="stanford", src="/images/SUSig_Black_Seal_Stacked_Left.png", href="stanford.edu", width='130')
+          li
+            a(class="scroller scroller-choice", href="/browse") Browse
+          li
+            a(class="scroller scroller-choice", href="/create") Create
+          li
+            a(class="scroller scroller-choice", href="/about") About
+
+
+    br
+    block content
