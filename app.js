@@ -75,10 +75,13 @@ app.use(function(err, req, res, next) {
   });
 });
 
-/*app.set('port', (process.env.PORT || 3000));
+// Node.js launching code to enable >> node app.js command to run in terminal
+// Uncomment it while testing/debugging on localhost
+// Comment it to mount on rulepedia.org
+app.set('port', (process.env.PORT || 5000));
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
-});*/
+});
 
 module.exports = app;

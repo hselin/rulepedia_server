@@ -13,19 +13,26 @@ block content
                 div(class='iot-content', align='center')
                     h2(class="iot-content-text iot-content-name") Thingpedia
                     h4(class="iot-content-text iot-content-ad") Help the world connect the dots
-                    h4(class="iot-content-text iot-content-short") An crowdsourced open platform for creating IoT rules and recipes led by Stanford University
+                    h4(class="iot-content-text iot-content-short") An open platform led by Stanford University for creating IoT rules on personal and medical devices
                     div(class='iot-btn-tab')
                         a(class='btn btn-primary iot-btn iot-btn-developer col-sm-4 col-sm-offset-1 col-xs-12') I'm a developer
                         a(class='btn btn-warning iot-btn iot-btn-subscribe col-sm-4 col-xs-12') I want to support
 
+
     section(class='white-block features')
-        div(class='feature-one row')
+        div(class='feature-row row')
+            div(class='feature-two-text col-sm-5 col-sm-offset-1')
+                h3(class='feature-title') The Next Solution for <a class='feature-title-link' href='http://www.forbes.com/sites/tjmccue/2015/04/22/117-billion-market-for-internet-of-things-in-healthcare-by-2020/' target="_blank">Healthcare IoT</a>
+                p(class='feature-text') Across-the-board architecture for all personal IoTs, from health care for the elderly, people with chronic diseases, as well as people wishing to keep up with their health. 
+                    a Learn More
+            div(class='feature-zero-img col-sm-5 col-xs-12')
+        div(class='feature-row row')
             div(class='feature-one-img col-sm-5 col-sm-offset-1 col-xs-12')
             div(class='feature-one-text col-sm-5')
                 h3(class='feature-title') The More You Use, The Stronger It Is
                 p(class='feature-text') We provide an crowdsourced platform. Everyone can deploy rules from the existing repositories, as well as create and share their own IoT (Internet of Things) rules. 
                     a Learn More
-        div(class='feature-two row')
+        div(class='feature-row row')
             div(class='feature-two-text col-sm-5 col-sm-offset-1')
                 h3(class='feature-title') Similar but Better
                 p(class='feature-text') Rules are similar to IFTTT "recipes" and Zapier "zaps", but unlike these proprietary platforms, Rulepedia is opensourced and allows users to keep their own data privacy. 
@@ -40,147 +47,171 @@ block content
     section(class='grey-block idea')
         div
             h4(class='idea-title') Based on pre-built channels, these rules can be written within dozens of lines of code...
-        div(class='idea-row row')
-            div(class="idea-panel-wrap col-md-4")
-                div(class="panel panel-primary idea-panel hvr-grow-shadow")
-                    div(class="idea-panel-body panel-body")
-                        span(class="fa-stack fa-lg hvr-rotate idea-icon icon-1")
-                          i(class="fa fa-circle-thin fa-stack-2x")
-                          i(class="fa fa-taxi fa-stack-1x")
-                        div(class="idea-text")
-                            |Call a texi
-                            br
-                            | <i>---if---</i>
-                            br
-                            |there's a storm
 
-            div(class="idea-panel-wrap col-md-4")
-                div(class="panel panel-primary idea-panel hvr-grow-shadow")
-                    div(class="idea-panel-body panel-body")
-                        span(class="fa-stack fa-lg hvr-rotate idea-icon icon-2")
-                          i(class="fa fa-circle-thin fa-stack-2x")
-                          i(class="fa fa-lightbulb-o fa-stack-1x")
-                        div(class="idea-text")
-                            |Turn on lights
-                            br
-                            | <i>---if---</i>
-                            br
-                            |it's at dusk
+        div(class="panel panel-default idea-row-wrap")
+            div(class="panel-body")
+                h4(class='idea-row-title') Medical IoT
+                div(class='idea-row row')
+                    div(class="idea-panel-wrap col-md-4")
+                        div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                            div(class="idea-panel-body panel-body")
+                                span(class="fa-stack fa-lg hvr-rotate idea-icon icon-med-1")
+                                  i(class="fa fa-circle-thin fa-stack-2x")
+                                  i(class="fa fa-medkit fa-stack-1x")
+                                div(class="idea-text")
+                                    |Remind me to take pills
+                                    br
+                                    | <i>---if---</i>
+                                    br
+                                    |physician subscribes
 
-            div(class="idea-panel-wrap col-md-4")
-                div(class="panel panel-primary idea-panel hvr-grow-shadow")
-                    div(class="idea-panel-body panel-body")
-                        span(class="fa-stack fa-lg hvr-rotate idea-icon icon-3")
-                          i(class="fa fa-circle-thin fa-stack-2x")
-                          i(class="fa fa-twitter fa-stack-1x")
-                        div(class="idea-text")
-                            |Send a twit
-                            br
-                            | <i>---if---</i>
-                            br
-                            |weather's good
+                    div(class="idea-panel-wrap col-md-4")
+                        div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                            div(class="idea-panel-body panel-body")
+                                span(class="fa-stack fa-lg hvr-rotate idea-icon icon-med-2")
+                                  i(class="fa fa-circle-thin fa-stack-2x")
+                                  i(class="fa fa-stethoscope fa-stack-1x")
+                                div(class="idea-text")
+                                    |Appoint with hospital
+                                    br
+                                    | <i>---if---</i>
+                                    br
+                                    |two months later
 
-        div(class='idea-row row')
-            div(class="idea-panel-wrap col-md-4")
-                div(class="panel panel-primary idea-panel hvr-grow-shadow")
-                    div(class="idea-panel-body panel-body")
-                        span(class="fa-stack fa-lg hvr-rotate idea-icon icon-4")
-                          i(class="fa fa-circle-thin fa-stack-2x")
-                          i(class="fa fa-credit-card fa-stack-1x")
-                        div(class="idea-text")
-                            |Send me a text
-                            br
-                            | <i>---if---</i>
-                            br
-                            |my card is charged
-
-            div(class="idea-panel-wrap col-md-4")
-                div(class="panel panel-primary idea-panel hvr-grow-shadow")
-                    div(class="idea-panel-body panel-body")
-                        span(class="fa-stack fa-lg hvr-rotate idea-icon icon-5")
-                          i(class="fa fa-circle-thin fa-stack-2x")
-                          i(class="fa fa-line-chart fa-stack-1x")
-                        div(class="idea-text")
-                            |Send me notification
-                            br
-                            | <i>---if---</i>
-                            br
-                            |stock is up
-
-            div(class="idea-panel-wrap col-md-4")
-                div(class="panel panel-primary idea-panel hvr-grow-shadow")
-                    div(class="idea-panel-body panel-body")
-                        span(class="fa-stack fa-lg hvr-rotate idea-icon icon-6")
-                          i(class="fa fa-circle-thin fa-stack-2x")
-                          i(class="fa fa-heartbeat fa-stack-1x")
-                        div(class="idea-text")
-                            |Share my activity
-                            br
-                            | <i>---if---</i>
-                            br
-                            |I work out
-
-        div(class='idea-row row last-row')
-            div(class="idea-panel-wrap col-md-4 col-md-offset-2")
-                div(class="panel panel-primary idea-panel hvr-grow-shadow")
-                    div(class="idea-panel-body panel-body")
-                        span(class="fa-stack fa-lg hvr-rotate idea-icon icon-7")
-                          i(class="fa fa-circle-thin fa-stack-2x")
-                          i(class="fa fa-paw fa-stack-1x")
-                        div(class="idea-text")
-                            |Call my number
-                            br
-                            | <i>---if---</i>
-                            br
-                            |Fido is lost :(
-
-            div(class="idea-panel-wrap col-md-4")
-                div(class="panel panel-primary idea-panel hvr-grow-shadow")
-                    div(class="idea-panel-body panel-body")
-                        span(class="fa-stack fa-lg hvr-rotate idea-icon icon-8")
-                          i(class="fa fa-circle-thin fa-stack-2x")
-                          i(class="fa fa-question fa-stack-1x")
-                        div(class="idea-text")
-                            |Create your own
-                            br
-                            | <i>---if---</i>
+                    div(class="idea-panel-wrap col-md-4")
+                        div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                            div(class="idea-panel-body panel-body")
+                                span(class="fa-stack fa-lg hvr-rotate idea-icon icon-med-3")
+                                  i(class="fa fa-circle-thin fa-stack-2x")
+                                  i(class="fa fa-area-chart fa-stack-1x")
+                                div(class="idea-text")
+                                    |Call doctor
+                                    br
+                                    | <i>---if---</i>
+                                    br
+                                    |Blood pressure over 139/89mm
 
 
+        div(class='idea-row-divider')
 
-        // Panel-based example demo: bad effect
-        //
-            div
-                h4(class='idea-title') Build them up easily using existing platform 
-                    br
-                    | <b>Omlet</b> and <b>Sabrina</b>
-                br
-                br
+        div(class="panel panel-default idea-row-wrap")
+            div(class="panel-body")
+                h4(class='idea-row-title') Personal IoT
+                div(class='idea-row row')
+                    div(class="idea-panel-wrap col-md-4")
+                        div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                            div(class="idea-panel-body panel-body")
+                                span(class="fa-stack fa-lg hvr-rotate idea-icon icon-1")
+                                  i(class="fa fa-circle-thin fa-stack-2x")
+                                  i(class="fa fa-taxi fa-stack-1x")
+                                div(class="idea-text")
+                                    |Call a texi
+                                    br
+                                    | <i>---if---</i>
+                                    br
+                                    |there's a storm
 
-            div(class="panel panel-default idea-case-description idea-case-panel")
-                div(class="panel-body")
-                    Basic panel
-                    div(class='row idea-panel-body-row')
-                        div.col-md-offset-1.col-md-5.col-sm-12
-                            a(class='idea-case-exp idea-case-video idea-case-video-1')
-                            p(class='idea-case-exp idea-case-text') Sabrina will send a notifacion to Omlet chat whenever the doorbell (based on IBeacon) is pressed
-                        div.idea-case-screen.col-md-5
-                            image(class='idea-case-img idea-case-img-1')
-        // Panel-based example demo: bad effect
-        br
-        br
-        br
+                    div(class="idea-panel-wrap col-md-4")
+                        div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                            div(class="idea-panel-body panel-body")
+                                span(class="fa-stack fa-lg hvr-rotate idea-icon icon-2")
+                                  i(class="fa fa-circle-thin fa-stack-2x")
+                                  i(class="fa fa-lightbulb-o fa-stack-1x")
+                                div(class="idea-text")
+                                    |Turn on lights
+                                    br
+                                    | <i>---if---</i>
+                                    br
+                                    |it's at dusk
+
+                    div(class="idea-panel-wrap col-md-4")
+                        div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                            div(class="idea-panel-body panel-body")
+                                span(class="fa-stack fa-lg hvr-rotate idea-icon icon-3")
+                                  i(class="fa fa-circle-thin fa-stack-2x")
+                                  i(class="fa fa-twitter fa-stack-1x")
+                                div(class="idea-text")
+                                    |Send a twit
+                                    br
+                                    | <i>---if---</i>
+                                    br
+                                    |weather's good
+
+                div(class='idea-row row')
+                    div(class="idea-panel-wrap col-md-4")
+                        div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                            div(class="idea-panel-body panel-body")
+                                span(class="fa-stack fa-lg hvr-rotate idea-icon icon-4")
+                                  i(class="fa fa-circle-thin fa-stack-2x")
+                                  i(class="fa fa-credit-card fa-stack-1x")
+                                div(class="idea-text")
+                                    |Send me a text
+                                    br
+                                    | <i>---if---</i>
+                                    br
+                                    |my card is charged
+
+                    div(class="idea-panel-wrap col-md-4")
+                        div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                            div(class="idea-panel-body panel-body")
+                                span(class="fa-stack fa-lg hvr-rotate idea-icon icon-5")
+                                  i(class="fa fa-circle-thin fa-stack-2x")
+                                  i(class="fa fa-line-chart fa-stack-1x")
+                                div(class="idea-text")
+                                    |Send me notification
+                                    br
+                                    | <i>---if---</i>
+                                    br
+                                    |stock is up
+
+                    div(class="idea-panel-wrap col-md-4")
+                        div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                            div(class="idea-panel-body panel-body")
+                                span(class="fa-stack fa-lg hvr-rotate idea-icon icon-6")
+                                  i(class="fa fa-circle-thin fa-stack-2x")
+                                  i(class="fa fa-heartbeat fa-stack-1x")
+                                div(class="idea-text")
+                                    |Share my activity
+                                    br
+                                    | <i>---if---</i>
+                                    br
+                                    |I work out
+
+                div(class='idea-row row last-row')
+                    div(class="idea-panel-wrap col-md-4 col-md-offset-2")
+                        div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                            div(class="idea-panel-body panel-body")
+                                span(class="fa-stack fa-lg hvr-rotate idea-icon icon-7")
+                                  i(class="fa fa-circle-thin fa-stack-2x")
+                                  i(class="fa fa-paw fa-stack-1x")
+                                div(class="idea-text")
+                                    |Call my number
+                                    br
+                                    | <i>---if---</i>
+                                    br
+                                    |Fido is lost :(
+
+                    div(class="idea-panel-wrap col-md-4")
+                        div(class="panel panel-primary idea-panel hvr-grow-shadow")
+                            div(class="idea-panel-body panel-body")
+                                span(class="fa-stack fa-lg hvr-rotate idea-icon icon-8")
+                                  i(class="fa fa-circle-thin fa-stack-2x")
+                                  i(class="fa fa-question fa-stack-1x")
+                                div(class="idea-text")
+                                    |Create your own
+                                    br
+                                    | <i>---if---</i>
+
 
     section(class='white-block case')
-        br
-        br
         div
             h4.case-title Build them up easily using existing platforms
-        div.case-title-line
+        b
         div.case-platform-omlet.case-platform.case-slideLeft
             div.row
                 div.case-platform-omlet-text.col-md-5.col-md-offset-1
-                    h3.case-platform-text-title.case-platform-text Omlet
-                    p.case-text.case-platform-text Omlet is an Open Messaging Platform developed by Omlet Inc. that enables consumers to “share anything, with anyone, anywhere,” while owning the data they share.
+                    h3.case-platform-text-title.case-platform-text.case-platform-title-omlet Omlet
+                    p.case-text.case-platform-text Omlet is an open messaging system that lets users own their data in the repository of their choice. Based on Omlet, we create private communication between doctors, patients, and caregivers, as well as data transfer between IoTs.
                     a(class='btn case-btn case-btn-omlet') Download Omlet
                 div.case-platform-omlet-img.col-md-5
         div.case-platform-sabrina.case-platform.case-slideRight
@@ -189,12 +220,9 @@ block content
                     div.case-platform-sabrina-img-2
                     div.case-platform-sabrina-img-1
                 div.case-platform-sabrina-text.col-md-5.case-platform-text
-                    br
-                    h3.case-platform-text-title.case-platform-text Sabrina
-                    p.case-text.case-platform-text Omlet is an Open Messaging Platform that enables consumers to “share anything, with anyone, anywhere,” while owning the data they share.
+                    h3.case-platform-text-title.case-platform-text.case-platform-title-sabrina Sabrina
+                    p.case-text.case-platform-text Sabrina is an opensource messaging assistance platform built on Omlet. As a chat bot in the Omlet Chat app, Sabrina uses natural language to communicate with users, recommends and executes IoT rules, and can even provide emotional support through the chat interface.
                     a(class='btn case-btn case-btn-sabrina') Download Sabrina
-        br
-        br
 
     section(class='grey-block case')
         div
@@ -205,7 +233,7 @@ block content
                 div.case-row-item
                     a.case-item-video
                     div.case-item-text
-                        h4 abcabc
+                        h5 abcabc
                         p AEBUOBONFOAW FJIOW FIQWM FNOPJEOIPFW  FWIOFNIOW W
                     div.case-expandUp
                         div.case-scroll-line
@@ -214,8 +242,8 @@ block content
                 div.case-row-item
                     a.case-item-video
                     div.case-item-text
-                        h4 abcabc
-                        p AEBUOBONFOAW FJIOW FIQWM FNOPJEOIPFW  FWIOFNIOW W
+                        h5 Device Finding
+                        p Detecting the IoTs nearby using iBeacon etc and connecting them over Omlet
                     div.case-expandUp
                         div.case-scroll-line
                         div.case-omlet-screen
@@ -223,14 +251,11 @@ block content
                 div.case-row-item
                     a.case-item-video
                     div.case-item-text
-                        h4 abcabc
+                        h5 abcabc
                         p AEBUOBONFOAW FJIOW FIQWM FNOPJEOIPFW  FWIOFNIOW W
                     div.case-expandUp
                         div.case-scroll-line
                         div.case-omlet-screen
-        br
-        br
-        br
 
     section(class='white-block team')
         br

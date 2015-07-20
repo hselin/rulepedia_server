@@ -1,4 +1,7 @@
-.carousel-example-generic{
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,400italic");
+@import url("lato-support.css")
+
+url.carousel-example-generic{
 	margin: auto;
 	width:1900px;
 }
@@ -33,7 +36,7 @@
 .iot-content{
 	box-shadow: 5px 5px 5px #AAAAAA;
 	background-color: rgba(244, 244, 244, 0.917);
-	height: 65%;
+	height: 67%;
 	margin-right: 25%;
 	margin-left:25%;
 	padding: 6px 3.7% 25px 3.7%;
@@ -54,7 +57,7 @@
 }
 
 .iot-content-short{
-	margin-bottom: 2.4%;
+	margin-bottom: 4%;
 }
 
 .iot-btn,.case-btn{
@@ -80,13 +83,18 @@
 	background-color: #D18B43;
 }
 
-.feature-one{
-	padding-top: 70px;
-	padding-bottom: 40px;
+.features{
+	margin-top: 40px;
+	margin-bottom: 40px;
 }
 
-.feature-two{
-	margin-bottom:35px;
+.feature-row{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.feature-zero-img{
+	content:url(../images/health-care-2.jpeg);
 }
 
 .feature-one-img{
@@ -95,12 +103,22 @@
 
 .feature-two-img{
 	content:url(../images/iot.png);
+	border-radius: 300px;
 }
 
 .feature-title{
 	color: rgb(102, 102, 102);
 	font-weight: bold;
 	margin-top: 9%;
+}
+
+.feature-title-link{
+	text-decoration: underline;
+	color: rgb(102, 102, 102);
+}
+
+.feature-title-link:hover{
+	color: rgb(152, 152, 152);
 }
 
 .feature-text{
@@ -140,6 +158,17 @@
 	background-color: rgb(222, 222, 222);
 }
 
+.idea{
+	padding-bottom: 60px;
+}
+
+/*
+.idea-title-line{
+	border-top: 2px solid rgb(160, 160, 160);
+	margin:auto;
+	width:30%;
+}*/
+
 .idea-title{
 	font-weight: bold;
 	padding-top: 50px;
@@ -148,24 +177,50 @@
 	width:50%;
 	margin:auto;
 	text-align: center;
+	margin-bottom: 40px;
+}
+
+.idea-row-title{
+	font-weight: bold;
+	padding-top: 30px;
+	color:rgb(80, 80, 80);
+	width:50%;
+	margin:auto;
+	padding-bottom: 20px;
+	text-align: center;
+}
+
+.idea-row-wrap{
+	margin: auto;
+	box-shadow: none;
+	background-color: rgb(224, 224, 224);
+	width: 70%;
+	border-radius: 15px;
+	border: 2px solid rgb(160, 160, 160);
+	padding-bottom: 30px;
+}
+
+.idea-row-divider{
+	height: 40px;
 }
 
 .idea-row{
 	margin:auto;
-	width:70%;
+	width:90%;
 	text-align: center;
 }
 
 .idea-panel-wrap{
-	padding-left: 30px;
-	padding-top: 40px;
-	padding-right: 30px;
+	padding-left: 24px;
+	padding-top: 10px;
+	padding-right: 24px;
 }
 
 .idea-panel-wrap .idea-panel{
 	border-width: 5px;
 	border-radius: 3px;
 	width:100%;
+	margin-bottom: 15px;
 	/*box-shadow: 5px 5px 5px #AAAAAA;*/	/* Write hoover effect with this line */
 }
 
@@ -184,6 +239,10 @@
 	margin-top: 16%;
 	font-size: 2.7em;
 }
+
+.idea-icon.icon-med-1{color: #A8383B;}
+.idea-icon.icon-med-2{color: #1F3D80;}
+.idea-icon.icon-med-3{color: #D58100;}
 
 .idea-icon.icon-1{color: #D56100;}
 .idea-icon.icon-2{color: #008080;}
@@ -213,51 +272,27 @@
 	margin:auto;
 }
 
-/*
-.idea-panel-body-row{
-	margin-top: 20px;
+.case{
+	padding-top:30px;
+	padding-bottom: 80px;
 }
-
-.idea-case-exp{
-	width:100%;
-	margin:auto;
-}
-
-.idea-case-text{
-	text-align: center;
-	padding-top: 10%;
-}
-
-.idea-case-video{
-	border-radius: 5px;
-}
-
-.idea-case-video-1{
-	content:url(../images/video.png);
-}
-
-.idea-case-img{
-	margin-left: 0%;
-	width:90%;
-	border-radius: 5px;
-}
-
-.idea-case-img-1{
-	content:url(../images/sabrina-demo.png);
-}
-
-.idea-case-text{
-	text-align:center;
-}*/
 
 .case-title{
 	font-weight: bold;
-	padding-top: 50px;
 	padding-bottom: 15px;
+	padding-top: 50px;
 	color:rgb(102, 102, 102);
 	width:50%;
 	margin:auto;
 	text-align: center;
+}
+
+.case-platform-title-omlet{
+	margin-top: -2px;
+}
+
+.case-platform-title-sabrina{
+	padding-top: 10px;
 }
 
 .case-platform{
