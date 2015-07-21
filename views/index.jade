@@ -6,7 +6,23 @@ block scripts
     script(src="/js/index.js")
 
 block content
-    
+    div('document-modals')
+        div(id="iot-developer-modal" class="modal fade" role="dialog")
+            div(class="iot-developer-modal-dialog modal-dialog")
+                div(class="modal-content")
+                    div(class="modal-header")
+                        button(type="button", class="close", data-dismiss="modal") &times
+                    div(class='modal-content-wrap')
+                        div(class="modal-body")
+                            h4 <b>Join our mailing list</b>
+                            h5 Hear about the latest news and releases
+                            div(class="form-group")
+                                input(class="form-control", type="text", value="Your email address")
+                        div(class='modal-footer iot-modal-footer')
+                            div(class='row')
+                                div(class="col-sm-3 col-sm-offset-9")
+                                    button(type="button", class="btn btn-primary iot-developer-modal-subscribe-btn", data-dismiss="modal") Suscribe
+
     section(class='page-banner block')
         div(class='iot-banner')
             div(class='iot-comic-picture')
@@ -15,8 +31,8 @@ block content
                     h4(class="iot-content-text iot-content-ad") Help the world connect the dots
                     h4(class="iot-content-text iot-content-short") An open platform led by Stanford University for creating IoT rules on personal and medical devices
                     div(class='iot-btn-tab')
-                        a(class='btn btn-primary iot-btn iot-btn-developer col-sm-4 col-sm-offset-1 col-xs-12') I'm a developer
-                        a(class='btn btn-warning iot-btn iot-btn-subscribe col-sm-4 col-xs-12') I want to support
+                        a(class='btn btn-primary iot-btn iot-btn-developer col-sm-4 col-sm-offset-1 col-xs-12', data-toggle="modal", data-target="#iot-developer-modal") I'm a developer
+                        a(class='btn btn-warning iot-btn iot-btn-subscribe col-sm-4 col-xs-12', data-toggle="modal", data-target="#iot-developer-modal") I want to support
 
 
     section(class='white-block features')
@@ -44,7 +60,7 @@ block content
         button(href="#" class="subscribe-button btn btn-default") Subscribe to Thingpedia
         div(class='subscribe-line')
 
-    section(class='grey-block idea')
+    section(class='grey-block idea', id='browse')
         div
             h4(class='idea-title') Based on pre-built channels, these rules can be written within dozens of lines of code...
 
@@ -203,7 +219,7 @@ block content
                                     | <i>---if---</i>
 
 
-    section(class='white-block case')
+    section(class='white-block case', id='platform')
         div
             h4.case-title Build them up easily using existing platforms
         b
@@ -224,40 +240,40 @@ block content
                     p.case-text.case-platform-text Sabrina is an opensource messaging assistance platform built on Omlet. As a chat bot in the Omlet Chat app, Sabrina uses natural language to communicate with users, recommends and executes IoT rules, and can even provide emotional support through the chat interface.
                     a(class='btn case-btn case-btn-sabrina') Download Sabrina
 
-    section(class='grey-block case')
+    section(class='grey-block examples', id='examples')
         div
             h4.case-title Check out some of our examples
         div.case-title-line
         div.row.case-row
             div.col-md-4
                 div.case-row-item
-                    a.case-item-video
+                    iframe(class="case-item-video", type="text/html", frameborder="0", src="http://www.youtube.com/embed/B072yE6Q4xY", autohide="1")
                     div.case-item-text
-                        h5 abcabc
-                        p AEBUOBONFOAW FJIOW FIQWM FNOPJEOIPFW  FWIOFNIOW W
+                        h5 Connecting Video Camera
+                        p Once configured, Sabrina connects to the security camera and sends first-time pictures through Omlet using rule: <b><i>Send picture if door bell rings.</i></b>
                     div.case-expandUp
                         div.case-scroll-line
                         div.case-omlet-screen.case-screen-1
             div.col-md-4
                 div.case-row-item
-                    a.case-item-video
+                    iframe(class="case-item-video", type="text/html", frameborder="0", src="http://www.youtube.com/embed/yyPsOw1RFb4", autohide="1")
                     div.case-item-text
                         h5 Device Finding
-                        p Detecting the IoTs nearby using iBeacon etc and connecting them over Omlet
+                        p Detecting the IoTs nearby using iBeacon. Based on the specific device, Sabrina will recommend a list of rules that can be installed. Rule: <b><i>Ask for permission if new device found</i></b>
                     div.case-expandUp
                         div.case-scroll-line
                         div.case-omlet-screen.case-screen-2
             div.col-md-4
                 div.case-row-item
-                    a.case-item-video
+                    iframe(class="case-item-video", type="text/html", frameborder="0", src="http://www.youtube.com/embed/the-bmH97vw", autohide="1")
                     div.case-item-text
-                        h5 abcabc
-                        p AEBUOBONFOAW FJIOW FIQWM FNOPJEOIPFW  FWIOFNIOW W
+                        h5 Fitness Monitering
+                        p Sabrina reads in data from local device and helps you automatically keep track of activities using rule: <b><i>Upload data if workout finished</i></b>
                     div.case-expandUp
                         div.case-scroll-line
                         div.case-omlet-screen.case-screen-3
 
-    section(class='white-block team')
+    section(class='white-block team', id='about')
         br
         div
             h3.case-title Our Team
@@ -307,51 +323,3 @@ block content
         br
         br
         br
-
-
-
-    //BELOW is the code for carousel
-    //
-      div(id='carousel-example-generic', class='main-carousel carousel slide', data-ride='carousel')
-        ol(class='carousel-indicators')
-            li(data-target='#carousel-example-generic', data-slide-to='0', class='active')
-            li(data-target='#carousel-example-generic', data-slide-to='1')
-            li(data-target='#carousel-example-generic', data-slide-to='2')
-       
-        div(class='carousel-inner', role='listbox')
-            div(class='item')
-                img(class='img-responsive center-block', src='/images/world.jpg')
-                div(class='carousel-caption', style='color: #FFFFCC')
-                    h1
-                        b Create and share magic spells for your magic assistant to simplify everyday tasks
-            div(class='item active')
-                img(class='img-responsive center-block', src='/images/world3.jpg')
-                div(class='carousel-caption', style='color: #FFFFFF')
-                    h1
-                        b Welcome to Sabrina's Magic Shop!
-            div(class='item')
-                img(class='img-responsive center-block', src='/images/world2.jpg')
-                div(class='carousel-caption', style='color: #FF0066')
-                    h1
-                        b Monitor events and trigger actions from your phone - magically
-
-
-        a(class='left carousel-control', href='#carousel-example-generic', role='button', data-slide='prev')
-            span(class='glyphicon glyphicon-chevron-left', aria-hidden='true')
-            span(class='sr-only')
-                | Previous
-
-        a(class='right carousel-control', href='#carousel-example-generic', role='button', data-slide='next')
-            span(class='glyphicon glyphicon-chevron-right', aria-hidden='true')
-            span(class='sr-only')
-                | Next
-
-    //ABOVE is the code for carousel
-
-  br
-  br
-
-  div.center
-    a(class='btn btn-primary main-nav-button', href='/browse') Browse spells
-    a(class='btn btn-success main-nav-button', href='/create') Create a new spell
-

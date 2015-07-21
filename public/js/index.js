@@ -24,4 +24,6 @@ $(window).scroll(function() {
 			$(this).addClass("slideRight");
 		}
 	});
+
+    $( ".dialog" ).dialog();
 });

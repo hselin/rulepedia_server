@@ -192,7 +192,7 @@ url.carousel-example-generic{
 .idea-row-wrap{
 	margin: auto;
 	box-shadow: none;
-	background-color: rgb(224, 224, 224);
+	background-color: rgb(227, 227, 227);
 	width: 70%;
 	border-radius: 15px;
 	border: 2px solid rgb(160, 160, 160);
@@ -352,7 +352,7 @@ url.carousel-example-generic{
 }
 
 .case-item-video{
-	content:url(../images/video.png);
+	/*content:url(../images/video.png);*/
 	border-radius: 4px;
 	border: 1px solid grey;
 	width:100%;
@@ -482,4 +482,38 @@ url.carousel-example-generic{
 
 .team-profile-mid-des{
 	font-size: 12px;
+}
+
+.modal {
+	margin-top: 50px;
+}
+
+.modal-content{
+	border-radius: 10px;
+}
+
+.modal-content-wrap{
+	width:100%;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.iot-developer-modal-dialog{
+	margin: auto;
+	
+}
+
+#focusedInput.form-control:focus{
+  border-color: #000000;
+  outline-color: #000000;
+}
+
+.iot-developer-modal-subscribe-btn{
+
+}
+
+.iot-modal-footer{
+	margin:auto;
+	padding-top: 0px;
+	padding-bottom: 20px;
 }
