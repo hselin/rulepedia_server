@@ -19,7 +19,6 @@ $(window).scroll(function() {
 
 	$('.case-slideRight').each(function(){
 		var imagePos = $(this).offset().top;
-		console.log(topOfWindow - imagePos);
 
 		if (imagePos < topOfWindow+600) {
 			$(this).addClass("slideRight");
