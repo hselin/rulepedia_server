@@ -498,6 +498,11 @@ url.carousel-example-generic{
 	padding-right: 10%;
 }
 
+.modal-body-text{
+	line-height: 130%;
+	margin-bottom: 2px;
+}
+
 .iot-developer-modal-dialog{
 	margin: auto;
 	
