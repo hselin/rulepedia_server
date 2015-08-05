@@ -25,3 +25,22 @@ $(window).scroll(function() {
 		}
 	});
 });
+
+$(function(){
+	console.log("trying to bind event listener");
+	$(".iot-supporter-modal-dialog .iot-supporter-modal-subscribe-btn").click(function(){
+		var subscriber = {email: $(".iot-supporter-modal-dialog .email-input").val(), name: "", organization: ""};
+		console.log(subscriber);
+		$.ajax({
+			url: "subscribe", 
+			type: "POST", 
+			data: JSON.stringify(subscriber),
+			contentType: "application/json; charset=utf-8",
+			success: function(){
+				console.log("Subscription succeeded.");
+			}, error: function(){
+				console.log("Subscription failed: xml request error.");
+			}
+		});
+	})
+})

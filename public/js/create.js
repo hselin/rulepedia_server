@@ -365,11 +365,19 @@
     }
 
     // All of the following update methods do the job of rearranging DOM display
+    // metadata: list of all existing channels
+    // kind: key, either "trigger" or "action"
+    // subKind: key, either "event" (trigger) or "method" (action)
+    // dialogTitle: string used to configure DOM display
+    // callback: appendTrigger/appendAction methods
     function updateChannelOptions(metadata, kind, subKind, dialogTitle, callback) {
         var placeholder = $('#' + kind + '-placeholder');
         placeholder.empty();
 
+
+        // item: a single channel
         metadata.forEach(function(item) {
+            // id (channel name), prefix, modal, container: parameters used to configure DOM display
             var id = item.id;
 
             var prefix = kind + '-' + id + '-' + subKind + '-select';
@@ -381,6 +389,7 @@
             var container = $('<div>', { 'class': 'container-fluid' });
 
             item[subKind].forEach(function(subitem) {
+                // subitem: the method or event element inside a single channel
                 buildChannelOption(subitem, kind, subKind, item, id, prefix, modal, container, callback);
             });
 

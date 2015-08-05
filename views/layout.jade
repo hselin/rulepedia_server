@@ -1,3 +1,6 @@
+// Layout used for displaying the navigation bar on top of the page.
+// Shared by all different pages
+
 doctype html
 html
   head
@@ -20,15 +23,13 @@ html
 
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/bootstrap-min.css')
-    
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
-
-    link(href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/paper/bootstrap.min.css", rel="stylesheet")
-    link(href="/stylesheets/bootswatch-min.css", rel="stylesheet")
-
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/paper/bootstrap.min.css")
+    link(rel="stylesheet", href="/stylesheets/bootswatch-min.css")
     link(rel='stylesheet', href='/stylesheets/hover-min.css', media='all')
     link(rel='stylesheet', href='/stylesheets/animation.css', media='all')
     link(rel='stylesheet', href='/stylesheets/style.css')
+
     //CSS file for layout elements
     link(rel='stylesheet', href='/stylesheets/custom-layout.css')
 
@@ -37,31 +38,30 @@ html
     block scripts
 
   body
-    header(class="navbar navbar-fixed-top navbar-default block", role="banner")
-      div(class="navbar-header")
-        button(class="navbar-toggle collapsed", data-toggle="collapse", data-target=".bs-navbar-collapse")
-          span.sr-only Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        a(class="navbar-brand navbar-icon scroller", href="/") ThingPedia
+    nav(class="navbar navbar-fixed-top navbar-default block", role="banner")
+      div(class="container-fluid")
+        div(class="navbar-header")
+          button(class="navbar-toggle", type= "button", data-toggle="collapse", data-target=".bs-navbar-collapse")
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          div
+            a(class="navbar-brand", href="#") ThingPedia
+            a(class="navbar-icon-divider hidden-xs")
+            a(href="https://www.stanford.edu", class="hidden-xs")
+              img(class="stanford", src="/images/SUSig_Black_Seal_Stacked_Left.png", width='130')
 
-
-      //TODO: Set active attribute
-      nav(class="navbar-collapse bs-navbar-collapse collapse", role="navigation")
-        ul.nav.navbar-nav
-          li
-            a.navbar-icon-divider
-          li
-            img(class="stanford", src="/images/SUSig_Black_Seal_Stacked_Left.png", href="stanford.edu", width='130')
-          li
-            a(class="scroller scroller-choice smoothScroll", href="#browse") Browse
-          li
-            a(class="scroller scroller-choice smoothScroll", href="#platform") Platform
-          li
-            a(class="scroller scroller-choice smoothScroll", href="#examples") Examples
-          li
-            a(class="scroller scroller-choice smoothScroll", href="#about") About
+        //TODO: Set active attribute
+        div(class="navbar-collapse bs-navbar-collapse collapse", role="navigation")
+          ul.nav.navbar-nav
+            li
+              a(class="scroller scroller-choice smoothScroll", href="#browse") Browse
+            li
+              a(class="scroller scroller-choice smoothScroll", href="#platform") Platform
+            li
+              a(class="scroller scroller-choice smoothScroll", href="#examples") Examples
+            li
+              a(class="scroller scroller-choice smoothScroll", href="#about") About
 
 
     br

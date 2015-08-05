@@ -1,14 +1,17 @@
 extends layout
 
-
+// Extend with custom CSS and JS for index page
 block scripts
+    // Custom CSS file for index page
     link(rel='stylesheet', href='/stylesheets/custom-index.css')
+    // Custom javascript file for index page
     script(src="/js/index.js")
 
+// TODO: Use jade template to simplify the code; implement generic blocks and handlebars
 block content
     div('document-modals')
-        div(id="iot-developer-modal" class="modal fade" role="dialog")
-            div(class="iot-developer-modal-dialog modal-dialog")
+        div(id="iot-supporter-modal" class="modal fade" role="dialog")
+            div(class="iot-supporter-modal-dialog modal-dialog")
                 div(class="modal-content")
                     div(class="modal-header")
                         button(type="button", class="close", data-dismiss="modal") &times
@@ -17,11 +20,11 @@ block content
                             h4 <b>We Need Your Support</b>
                             h5(class="modal-body-text") Join our mailing list, and hear about the latest news and releases
                             div(class="form-group")
-                                input(class="form-control", type="text", value="Your email address here")
+                                input(class="form-control email-input", type="text", value="Your email address here")
                         div(class='modal-footer iot-modal-footer')
                             div(class='row')
                                 div(class="col-sm-3 col-sm-offset-9")
-                                    button(type="button", class="btn btn-primary iot-developer-modal-subscribe-btn", data-dismiss="modal") Subscribe
+                                    button(type="button", class="btn btn-primary iot-supporter-modal-subscribe-btn", data-dismiss="modal") Subscribe
 
     section(class='page-banner block')
         div(class='iot-banner')
@@ -31,8 +34,8 @@ block content
                     h4(class="iot-content-text iot-content-ad") Help the World Connect the Dots
                     h4(class="iot-content-text iot-content-short") An open source platform for IoT rules that you can execute anywhere you want
                     div(class='iot-btn-tab')
-                        a(class='btn btn-primary iot-btn iot-btn-developer col-sm-4 col-sm-offset-1 col-xs-12', data-toggle="modal", data-target="#iot-developer-modal") I'm a developer
-                        a(class='btn btn-warning iot-btn iot-btn-subscribe col-sm-4 col-xs-12', data-toggle="modal", data-target="#iot-developer-modal") I want to support
+                        a(class='btn btn-primary iot-btn iot-btn-developer col-sm-4 col-sm-offset-1 col-xs-12', data-toggle="modal", data-target="#iot-supporter-modal") I'm a developer
+                        a(class='btn btn-warning iot-btn iot-btn-subscribe col-sm-4 col-xs-12', data-toggle="modal", data-target="#iot-supporter-modal") I want to support
 
 
     section(class='white-block features')
@@ -57,7 +60,7 @@ block content
 
 
     section(class='subscribe')
-        button(href="#" class="subscribe-button btn btn-default" data-toggle="modal" data-target="#iot-developer-modal") Suscribe to ThingPedia
+        button(href="#" class="subscribe-button btn btn-default" data-toggle="modal" data-target="#iot-supporter-modal") Suscribe to ThingPedia
         div(class='subscribe-line')
 
     section(class='grey-block idea', id='browse')

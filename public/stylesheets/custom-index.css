@@ -499,11 +499,12 @@ url.carousel-example-generic{
 }
 
 .modal-body-text{
+	font-size: 17px;
 	line-height: 130%;
-	margin-bottom: 2px;
+	margin-bottom: 10px;
 }
 
-.iot-developer-modal-dialog{
+.iot-supporter-modal-dialog{
 	margin: auto;
 	
 }
@@ -513,7 +514,7 @@ url.carousel-example-generic{
   outline-color: #000000;
 }
 
-.iot-developer-modal-subscribe-btn{
+.iot-supporter-modal-subscribe-btn{
 
 }
 
