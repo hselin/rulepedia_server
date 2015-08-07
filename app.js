@@ -15,6 +15,7 @@ var channels = require('./routes/channels');
 var remove = require('./routes/remove');
 var webhook = require('./routes/webhook');
 var query = require('./routes/query');
+var post = require('./routes/post')
 
 var app = express();
 
@@ -44,6 +45,7 @@ app.use('/channels', channels);
 app.use('/remove', remove);
 app.use('/webhook', webhook);
 app.use('/query', query);
+app.use('/post', post);
 
 app.use('/db', express.static('db'));
 
@@ -84,11 +86,11 @@ app.use(function(err, req, res, next) {
 // Uncomment it while testing/debugging on localhost
 // Comment it to mount on rulepedia.org
 // =======================================================
-// app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 5000));
 
-// app.listen(app.get('port'), function() {
-//   console.log('Node app is running on port', app.get('port'));
-// });
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
 // =======================================================
 
 module.exports = app;
