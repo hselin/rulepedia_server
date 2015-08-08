@@ -8,8 +8,8 @@
 var mongoose = require('mongoose');
 var uriUtil = require('mongodb-uri');
 
-/*var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }, 
-                replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } } };       */
+var options = {};
+options.server.socketOptions = options.replset.socketOptions = { keepAlive: 1 };
  
 /*
  * Mongoose uses a different connection string format than MongoDB's standard.
@@ -19,7 +19,7 @@ var uriUtil = require('mongodb-uri');
 var mongodbUri = 'mongodb://localhost:27017/post-bodytrace';
 var mongooseUri = uriUtil.formatMongoose(mongodbUri);
 
-mongoose.connect(mongooseUri);
+mongoose.connect(mongooseUri, options);
 
 var db = mongoose.connection;
 
