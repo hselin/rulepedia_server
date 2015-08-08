@@ -19,6 +19,7 @@
 
     $(function() {
         $.get('/db/channels.json', '', function(data, status, xhr) {
+<<<<<<< HEAD
 
             // These functions construct the triggers array
             // Triggers and actions both belong to event objects, with the following format
@@ -31,6 +32,8 @@
             //      {object: objectId, method: methodId, params: parsed},
             //      channelMeta, methodMeta, description
             //  }
+=======
+>>>>>>> 00022b0dc29741ed5d285de7a9be63a6970dd203
             channelMetaData = data;
             updateTriggerChannels(data);
             updateTriggerOptions(data);
@@ -40,8 +43,11 @@
 
         $('#create-rule').click(function() {
             try {
+<<<<<<< HEAD
 
                 //IMPORTANT: The key point where trigger and action objects get constructed
+=======
+>>>>>>> 00022b0dc29741ed5d285de7a9be63a6970dd203
                 var rule = computeRule();
 
                 if (false) {
@@ -77,7 +83,10 @@
         $('#generic-error').modal();
     }
 
+<<<<<<< HEAD
     //Return the newly created rule object
+=======
+>>>>>>> 00022b0dc29741ed5d285de7a9be63a6970dd203
     function computeRule() {
         var triggerText = recomputeTrigger();
         var actionText = recomputeAction();
@@ -308,11 +317,16 @@
          $('#actions-container').append(row);
          recomputeTriggerValue();
     }
+<<<<<<< HEAD
  
     // FIXME: way too many parameters here
     // subMeta: methodMeta in action, trigger objects
     // channelMeta: channelMeta in action and trigger objects
     // 
+=======
+
+    // FIXME: way too many parameters here
+>>>>>>> 00022b0dc29741ed5d285de7a9be63a6970dd203
     function buildChannelOption(subMeta, kind, subKind, channelMeta, id, prefix, modal, container, callback) {
         var row = $('<div>', { 'class': 'row' });
 
@@ -364,20 +378,27 @@
         container.append(row);
     }
 
+<<<<<<< HEAD
     // All of the following update methods do the job of rearranging DOM display
     // metadata: list of all existing channels
     // kind: key, either "trigger" or "action"
     // subKind: key, either "event" (trigger) or "method" (action)
     // dialogTitle: string used to configure DOM display
     // callback: appendTrigger/appendAction methods
+=======
+>>>>>>> 00022b0dc29741ed5d285de7a9be63a6970dd203
     function updateChannelOptions(metadata, kind, subKind, dialogTitle, callback) {
         var placeholder = $('#' + kind + '-placeholder');
         placeholder.empty();
 
+<<<<<<< HEAD
 
         // item: a single channel
         metadata.forEach(function(item) {
             // id (channel name), prefix, modal, container: parameters used to configure DOM display
+=======
+        metadata.forEach(function(item) {
+>>>>>>> 00022b0dc29741ed5d285de7a9be63a6970dd203
             var id = item.id;
 
             var prefix = kind + '-' + id + '-' + subKind + '-select';
@@ -389,7 +410,10 @@
             var container = $('<div>', { 'class': 'container-fluid' });
 
             item[subKind].forEach(function(subitem) {
+<<<<<<< HEAD
                 // subitem: the method or event element inside a single channel
+=======
+>>>>>>> 00022b0dc29741ed5d285de7a9be63a6970dd203
                 buildChannelOption(subitem, kind, subKind, item, id, prefix, modal, container, callback);
             });
 

@@ -1,16 +1,28 @@
+<<<<<<< HEAD
 // Layout used for displaying the navigation bar on top of the page.
 // Shared by all different pages
 
+=======
+>>>>>>> 00022b0dc29741ed5d285de7a9be63a6970dd203
 doctype html
 html
   head
     title= title
+<<<<<<< HEAD
 
     //script(src="//code.jquery.com/jquery-1.10.1.min.js")
     script(src='/js/jquery-min.js')
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
     script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
 
+=======
+    script(src="//code.jquery.com/jquery-1.11.2.min.js")
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+    //link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
+>>>>>>> 00022b0dc29741ed5d285de7a9be63a6970dd203
     script(src='/js/zlib/zlib.js')
     script(src='/js/zlib/zlib-deflate.js')
     script(src='/js/zlib/zlib-inflate.js')
@@ -18,6 +30,7 @@ html
     script(src='/js/zlib/zlib-crc32.js')
     script(src='/js/base64.js')
     script(src='/js/shared.js')
+<<<<<<< HEAD
     script(src='/js/smoothscroll.js')
 
 
@@ -63,6 +76,27 @@ html
             li
               a(class="scroller scroller-choice smoothScroll", href="#about") About
 
+=======
+    block scripts
+
+  body
+    header(class="navbar navbar-inverse navbar-fixed-top", role="banner")
+      div.navbar-header
+        button(class="navbar-toggle collapsed", data-toggle="collapse", data-target=".bs-navbar-collapse")
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a(class="navbar-brand scroller", href="/") Sabrina's Magic Shop
+      nav(class="navbar-collapse bs-navbar-collapse collapse", role="navigation")
+        ul.nav.navbar-nav
+          li
+            a(class="scroller", href="/browse") Browse
+          li
+            a(class="scroller", href="/create") Create
+          li
+            a(class="scroller", href="/about") About
+>>>>>>> 00022b0dc29741ed5d285de7a9be63a6970dd203
 
     br
     block content

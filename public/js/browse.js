@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 $(function(){
   $(".idea .idea-panel").mouseover(function(){
     console.log("mouse over")
   })
 })
 
+=======
+>>>>>>> 00022b0dc29741ed5d285de7a9be63a6970dd203
 function displayRule(rule, index, array) {
   var url = Rulepedia.Util.computeRuleURI(rule);
   var ruleLink = $('<a/>', {

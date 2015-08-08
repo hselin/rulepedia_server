@@ -15,7 +15,10 @@ var channels = require('./routes/channels');
 var remove = require('./routes/remove');
 var webhook = require('./routes/webhook');
 var query = require('./routes/query');
+<<<<<<< HEAD
 var post = require('./routes/post')
+=======
+>>>>>>> 00022b0dc29741ed5d285de7a9be63a6970dd203
 
 var app = express();
 
@@ -31,11 +34,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+<<<<<<< HEAD
 app.use('/', routes);             // Default page. With all UI updates
 // The following pages have not been modified.
 // TODO: New developer page UI
 // TODO: Rewrite channels format
 // TODO: Implement new channel database
+=======
+app.use('/', routes);
+>>>>>>> 00022b0dc29741ed5d285de7a9be63a6970dd203
 app.use('/users', users);
 app.use('/create', create);
 app.use('/browse', browse);
@@ -45,7 +52,10 @@ app.use('/channels', channels);
 app.use('/remove', remove);
 app.use('/webhook', webhook);
 app.use('/query', query);
+<<<<<<< HEAD
 app.use('/post', post);
+=======
+>>>>>>> 00022b0dc29741ed5d285de7a9be63a6970dd203
 
 app.use('/db', express.static('db'));
 
@@ -81,6 +91,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
+<<<<<<< HEAD
 // Node.js launching code to enable "">> node app.js" command to run in terminal,
 // used for local debugging process.
 // Uncomment it while testing/debugging on localhost
@@ -92,5 +103,7 @@ app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
 // =======================================================
+=======
+>>>>>>> 00022b0dc29741ed5d285de7a9be63a6970dd203
 
 module.exports = app;

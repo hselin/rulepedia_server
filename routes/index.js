@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+<<<<<<< HEAD
 // Subscriber database module (mongoose model for subscribers)
 var Subscriber = require('../routes/subscribe_db')
 
@@ -28,6 +29,12 @@ router.post('/subscribe', function(req, res){
 			}
 		});
 	}
+=======
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Sabrina\'s Magic Shop' });
+>>>>>>> 00022b0dc29741ed5d285de7a9be63a6970dd203
 });
 
 module.exports = router;
